@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div th:align="justify">
+    <a href="/users/add">Create new user</a>
+    <br/>
+    <br/>
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surame</th>
+            <th>Age</th>
+            <th>Edit user</th>
+            <th>Delete user</th>
+        </tr>
+        <th:block th:each="u : ${user}">
+            <tr>
+                <td th:text="${u.id}"></td>
+                <td th:text="${u.name}"></td>
+                <td th:text="${u.surname}"></td>
+                <td th:text="${u.age}"></td>
+                <td><a th:href="@{/users/{id}/userById(id=${u.id})}">Edit</a></td>
+                <td><a th:href="@{/users/{id}/userById(id=${u.id})}">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+</div>
 </body>
 </html>

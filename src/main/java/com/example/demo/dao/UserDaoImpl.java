@@ -1,8 +1,7 @@
-package web.dao;
+package com.example.demo.dao;
 
-import org.springframework.stereotype.Component;
+import com.example.demo.model.User;
 import org.springframework.stereotype.Repository;
-import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
